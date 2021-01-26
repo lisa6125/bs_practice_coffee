@@ -1,0 +1,571 @@
+/* 自訂樣式 */
+/* css原生變數 */
+:root {
+  /* 主題色 */
+  --coffee1: rgb(0, 0, 0) !important;
+  --coffee2: rgb(75, 57, 36) !important;
+  --coffee3: rgb(158, 126, 104) !important;
+  --coffee4: rgb(209, 192, 167) !important;
+  --coffee5: rgb(255, 255, 255) !important;
+
+  /* 黑色透明 */
+  --black25: rgb(0, 0, 0, 0.25) !important;
+  --black50: rgb(0, 0, 0, 0.5) !important;
+  --black75: rgb(0, 0, 0, 0.75) !important;
+
+  /* 白色透明 */
+  --white25: rgb(255, 255, 255, 0.25) !important;
+  --white50: rgb(255, 255, 255, 0.5) !important;
+  --white75: rgb(255, 255, 255, 0.75) !important;
+
+  /* 陰影 */
+  --shadow1: 0 0 5px var(--black25) !important;
+  --shadow2: 0 0 10px var(--black50) !important;
+  --shadow3: 0 0 15px var(--black75) !important;
+
+  /* 內距、外距、spacing */
+  --s0: 0 !important;
+  --s1: 0.25rem !important;
+  --s2: 0.5rem !important;
+  --s3: 1rem !important;
+  --s4: 1.5rem !important;
+  --s5: 3rem !important;
+}
+/* 自訂按鈕-------------------------------------------------------------------------------------------------------- */
+.btn-coffee {
+  color: var(--coffee5);
+  background-color: var(--coffee3);
+}
+
+.btn-coffee:hover {
+  color: var(--coffee5);
+  background-color: var(--coffee2);
+}
+
+.btn-coffee:focus,
+.btn-coffee.focus {
+  box-shadow: var(--shadow1);
+}
+
+.btn-coffee.disabled,
+.btn-coffee:disabled {
+  color: var(--coffee5);
+  background-color: var(--coffee3);
+  border-color: var(--coffee2);
+}
+
+.btn-coffee:not(:disabled):not(.disabled):active,
+.btn-coffee:not(:disabled):not(.disabled).active,
+.show > .btn-coffee.dropdown-toggle {
+  color: var(--coffee5);
+  background-color: var(--coffee3);
+  border-color: var(--coffee2);
+}
+
+.btn-coffee:not(:disabled):not(.disabled):active:focus,
+.btn-coffee:not(:disabled):not(.disabled).active:focus,
+.show > .btn-coffee.dropdown-toggle:focus {
+  box-shadow: var(--shadow1);
+}
+/* body--------------------------------------------------------------------------------------------------------- */
+body {
+  font-family: "Noto Sans TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+  font-weight: 300;
+  background-color: var(--coffee1);
+}
+/* 導覽列------------------------------------------------------------------------------------------------------- */
+#navbar {
+  background-color: var(--coffee1);
+  padding: var(--s2) 0;
+  transition: background-color 0.5s;
+}
+#navbar .nav-link i {
+  margin-right: var(--s1);
+}
+#section01,
+#section02,
+#section03,
+#section04,
+#section05,
+#section06 {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login_menu {
+  display: flex;
+  flex-direction: row;
+}
+/* 輪播圖 --------------------------------------------------------------------------------------------------------*/
+.carousel-control-prev,
+.carousel-control-next {
+  transition: all 1s ease-in;
+}
+.carousel-control-prev:hover {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  opacity: 1;
+}
+.carousel-control-next:hover {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  opacity: 1;
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 輪播放大的動畫 --------------------------------------------------------*/
+.img-scaleBig {
+  animation: img-scaleBig 15s 1s ease forwards;
+}
+@keyframes img-scaleBig {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+/* 自定義輪播圖指示器 -------------------------------------------*/
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-indicators li {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-indent: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease;
+}
+.carousel-indicators li.active {
+  width: 35px;
+  height: 35px;
+}
+.carousel-indicators li span {
+  transition: 0.5s;
+}
+.carousel-indicators li.active span {
+  font-size: 1.5rem;
+}
+/* section02 -------------------------------------------------------------------------------------------------------*/
+#section02 {
+  background: url(../images/bg-01.jpg) no-repeat center center/cover;
+}
+#section02 h1 {
+  padding-top: var(--s5);
+}
+#section02 .list-group-flush > .list-group-item:last-child {
+  border-bottom: 1px solid rgb(0, 0, 0, 0.125);
+}
+#section02 .list-group .nav-link {
+  color: var(--coffee2);
+  padding: var(--s2);
+  transition: 0.3s;
+}
+#section02 .nav-item.active {
+  color: var(--coffee2);
+  background: var(--coffee4);
+  border: var(--s1) var(--coffee5);
+}
+/* card ---------------------------------------------*/
+#section02 .card {
+  transition: 0.3s;
+  border: 5ps solid var(--coffee5) !important;
+  box-shadow: 0 0 0 1px var(--coffee4);
+  height: 100%;
+  padding: var(--s2);
+}
+#section02 .card:hover {
+  transform: translateY(-10px);
+}
+#section02 .card-body h5 {
+  margin: 0;
+  font-style: 1.1rem;
+}
+#section02 .card-body p {
+  margin: 0;
+}
+/* section03 -------------------------------------------------------------------------------------------------------*/
+#section03 {
+  padding-bottom: var(--s4);
+}
+#section03 h1 {
+  text-align: center;
+  padding-top: var(--s5);
+  margin: var(--s0) 0;
+  color: var(--coffee5);
+}
+#section03 > .container > .row {
+  background: var(--black50);
+  padding: var(--s2);
+  padding-top: var(--s4);
+}
+#section03 .col-md-3 {
+  padding-left: var(--s2);
+  padding-right: var(--s2);
+  margin-bottom: var(--s3);
+}
+#section03 .view {
+  position: relative;
+  overflow: hidden;
+}
+#section03 .view .text {
+  color: white;
+  background-color: var(--black50);
+  padding: 0 var(--s3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+#section03 .view:hover .text {
+  background-color: var(--black75);
+}
+#section03 .view .text p {
+  transition: 1s;
+  opacity: 0;
+}
+#section03 .view:hover .text p {
+  opacity: 1;
+}
+#section03 .view img {
+  transition: 0.5s;
+}
+#section03 .view:hover img {
+  transform: scale(1.2);
+}
+/* 回頂端 -------------------------------------------------------------------------------------------------------*/
+#go_top_page {
+  width: 50px;
+  height: 50px;
+  background: var(--coffee3);
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  z-index: 99999;
+  box-shadow: inset 0 0 0 2px var(--coffee3);
+}
+#go_top_page a {
+  display: block;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 50px;
+  color: var(--coffee5);
+  text-decoration: none;
+}
+#go_top_page a {
+  display: block;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 50px;
+  color: var(--coffee5);
+  text-decoration: none;
+}
+.toggle_black {
+  background: var(--coffee1) !important;
+}
+/* 底線效果 ------------------------------------------------------------------------------------------------------------*/
+.menu-left a {
+  display: inline-block;
+  position: relative;
+  /* 底線間距 */
+  padding-bottom: 0.5rem;
+  transition: color 0.5s;
+}
+.menu-left a::before {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.5s;
+}
+.menu-left a:hover::before {
+  width: 100%;
+  height: 1px;
+  background-color: var(--coffee5);
+}
+.menu-left a::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: var(--coffee5);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: width 0.5s;
+}
+.menu-left a:hover::after {
+  width: 100%;
+  background-color: transparent;
+}
+/* section04 -------------------------------------------------------------------------------------------------------*/
+#section04 {
+  height: 100vh;
+}
+#section04 .embed-responsive {
+  width: 100%;
+  height: 100%;
+  /* 將地圖脫離流向,使獨立出來,
+  而後方的交通資訊才可蓋在上方 */
+  position: absolute;
+  filter: brightness(50%);
+  transition: 0.5s;
+}
+#section04 .embed-responsive:hover {
+  filter: brightness(75%);
+}
+#section04 .information {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#section04 .information h3 {
+  color: var(--primary);
+  background: var(--coffee5);
+  text-align: center;
+  border-radius: 0.25rem;
+  padding: var(--s2);
+  box-shadow: var(--shadow1);
+  position: relative;
+}
+#section04 .information .accordion {
+  box-shadow: var(--shadow1);
+  position: relative;
+}
+/* 關閉按鈕 */
+#section04 .information_switch {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 1;
+}
+#section04 .information_switch .close {
+  font-size: 2rem;
+  color: var(--primary);
+  padding: 0.3rem 0.2rem 0.2rem;
+}
+.information_switch label .fa-angle-double-left {
+  display: none;
+}
+
+#trigger:checked + #yc_accordion {
+  transform: translateX(98%);
+}
+#yc_accordion {
+  transition: 1s ease;
+}
+/* 關閉右側方向鍵 */
+#trigger:checked
+  + #yc_accordion
+  .information_switch
+  label
+  .fa-angle-double-right {
+  display: none;
+}
+/* 開啟左側方向 */
+#trigger:checked
+  + #yc_accordion
+  .information_switch
+  label
+  .fa-angle-double-left {
+  display: block;
+}
+/* section05 -------------------------------------------------------------------------------------------------------*/
+#section05 {
+  color: var(--coffee2);
+  background: var(--coffee4);
+  padding: 2rem 0;
+}
+#section05 .container {
+  width: 95%;
+}
+#section05 h1 {
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+#section05 h5 {
+  font-size: 1.45rem;
+  text-align: center;
+  margin-bottom: 0.2rem !important;
+}
+#section05 small {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+}
+#section05 .row .col-12:first-child {
+  padding-bottom: 0.2rem;
+  margin-bottom: 1.5rem !important;
+  border-bottom: 1px solid var(--coffee3);
+}
+#section05 .row .col-12:last-child {
+  padding-top: 2rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--coffee3);
+}
+/* 表單 */
+#section05 input,
+#section05 textarea,
+#section05 select {
+  border: 1px solid var(--coffee4) !important;
+}
+#section05 input:focus,
+#section05 textarea:focus,
+#section05 select:focus {
+  box-shadow: var(--shadow1);
+  outline: none;
+  border: 1px solid var(--coffee3) !important;
+}
+/* section06 -------------------------------------------------------------------------------------------------------*/
+#section06 {
+  padding: 2rem 0;
+  background: url(../images/bg-01.jpg) no-repeat center/cover;
+}
+#section06 h1 {
+  text-align: center;
+  padding-top: var(--s5);
+  padding-bottom: var(--s3);
+}
+#section06 a.nav-link {
+  color: var(--coffee5);
+  border: 1px solid transparent;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  transition: 0.3s;
+}
+#section06 .tab-content {
+  padding: var(--s3);
+  overflow: auto;
+}
+#section06 .nav-item.nav-link.active {
+  background: var(--coffee2);
+}
+#section06 .nav-item.nav-link:not(.active) {
+  background: var(--coffee3);
+}
+#section06 .nav-item.nav-link:hover {
+  background: var(--coffee2);
+}
+/* footer ----------------------------------------------------------------------------------------------------------*/
+#footer {
+  color: var(--coffee5);
+  background: var(--coffee1);
+  padding: 1rem 0;
+  box-shadow: 0 -10px 10px var(--black50);
+}
+/* modal -----------------------------------------------------------------------------------------------------------*/
+#login .modal-content,
+#register .model-content {
+  box-shadow: var(--shadow3);
+  padding: var(--s3);
+}
+#login .modal-header,
+#register .model-header {
+  padding: var(--s3) var(--s0);
+}
+/* RWD斷點控制 ---------------------------------------------------------------------------------------------------*/
+@media (min-width: 992px) {
+  #section01,
+  #section02,
+  #section03,
+  #section04,
+  #section05,
+  #section06 {
+    height: 100vh;
+  }
+  #section02 .container {
+    padding: 0;
+  }
+  #section02 .container h1 {
+    padding-top: var(--s5);
+    padding-bottom: var(--s4);
+  }
+  #section02 .container > .row {
+    background-color: var(--white50);
+    padding-top: var(--s4);
+    border-radius: 1rem;
+    box-shadow: var(--shadow3);
+  }
+  #section02 .list-group {
+    margin: var(--s0);
+  }
+  #section03 .view .text p {
+    transition: 1s;
+    opacity: 1;
+  }
+  #section04 .information .accordion {
+    width: 40%;
+  }
+  #section04 .information {
+    align-items: flex-end;
+  }
+  #section05 h5 {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+  #section05 small {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* jarallax */
+.jarallax {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.jarallax > .jarallax-img {
+  position: absolute;
+  object-fit: cover;
+  /* support for plugin https://github.com/bfred-it/object-fit-images */
+  font-family: "object-fit: cover;";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#textillate {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  width: 50%;
+  background: linear-gradient(
+    270deg,
+    transparent,
+    var(--coffee3),
+    transparent
+  ) !important;
+}
